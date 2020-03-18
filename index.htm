@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<meta charset="utf-8">
+	
+		<style>
+		
+			body {
+				background-color	: black;
+				color				: yellow;
+				font				: 10pt arial;
+			}
+			
+			button {
+				background-color	: black;
+				color				: yellow;
+				border				: 2px solid red;
+				border-radius		: 10px;
+			}
+			
+			button:hover {
+				border				: 2px dashed red;
+			}
+
+			#random_tile_canvas {
+				border				: 2px solid red;
+				height				: 640px;
+				width				: 640px;
+				image-rendering		: -moz-crisp-edges;
+				image-rendering		: -webkit-crisp-edges;
+				image-rendering		: pixelated;
+				image-rendering		: crisp-edges;
+			}
+			
+			#hidden_tile_canvas {
+				display				: none;
+				border				: 2px solid red;
+				image-rendering		: -moz-crisp-edges;
+				image-rendering		: -webkit-crisp-edges;
+				image-rendering		: pixelated;
+				image-rendering		: crisp-edges;
+			}
+		
+		</style>
+		
+		<script src="js.js"></script>
+		<script src="css_colour_names_and_hex_codes.js"></script>
+		<script src="mick_lib.js"></script>
+	
+	</head>
+	
+	<body onload="initialise_page()">
+	
+		<table align="center">
+			<tr>
+				<td>
+					RANDOM 16 x 16 TILE GENERATOR BY MIKTOR
+				</td>
+			</tr>
+		</table>
+	
+		<table align="center">
+			<tr>
+				<td>
+					<canvas id="random_tile_canvas" width="320" height="320" onclick="random_tile_canvas_has_been_clicked(event)"></canvas>
+				</td>
+			</tr>
+		</table>
+
+		<table align="center">
+			<tr>
+				<td>
+					<button onclick="generate_random_tiles()">GENERATE RANDOM TILES</button>
+				</td>
+				<td style="width: 10px;">
+				
+				<td>
+					<button onclick="select_all_tiles()">SELECT ALL</button>
+				</td>
+				<td style="width: 10px;">
+				
+				<td>
+					<button onclick="unselect_all_tiles()">SELECT NONE</button>
+				</td>
+				<td style="width: 10px;">
+				</td>
+				<td>
+					<button onclick="extract_selected_tiles()">EXTRACT SELECTED TILES</button>
+				</td>
+			</tr>
+		</table>
+		
+		<canvas id="hidden_tile_canvas" width="6400" height="16"></canvas>
+
+	</body>
+
+</html>
